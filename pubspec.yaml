@@ -1,0 +1,60 @@
+name: comic_reader
+description: Aplikasi Pembaca Komik dengan Login SQLite dan API Integrasi.
+
+# Versi & publikasi
+publish_to: 'none' # Tidak dipublikasikan ke pub.dev
+version: 1.0.0+1
+
+# Kompatibilitas SDK
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # --- UI & State Management ---
+  cupertino_icons: ^1.0.8
+  get: ^4.6.6                   # Navigasi (Get.to, Get.offAll) + Snackbar
+  provider: ^6.1.2              # State management opsional untuk AuthState
+  flutter_secure_storage: ^9.2.4 # Enkripsi data login di device
+
+  # --- API & Caching ---
+  http: ^1.2.2                  # Koneksi ke API eksternal
+  cached_network_image: ^3.3.1  # Optimasi & caching gambar
+  intl: ^0.19.0                 # Formatting tanggal / angka dari API
+
+  # --- Database (SQLite) & Auth Lokal ---
+  sqflite: ^2.3.3               # Database utama untuk Android/iOS
+  sqflite_common_ffi: ^2.3.1    # SQLite untuk Desktop (Windows/Linux/Mac)
+  path_provider: ^2.1.4         # Path penyimpanan database
+  path: ^1.9.0                  # Utility untuk manipulasi path file
+  shared_preferences: ^2.3.2    # Simpan sesi login & preferensi user
+  crypto: ^3.0.5                # Hashing password (AuthService)
+
+  # --- Utilitas & Logging ---
+  logger: ^2.4.0                # Debugging & logging aplikasi
+  connectivity_plus: ^6.0.5     # Cek koneksi internet
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.2
+
+# --- Aset & Font ---
+flutter:
+  uses-material-design: true
+
+  # assets:
+  #   - assets/images/
+  #   - assets/icons/
+  #   - assets/data/
+
+  # fonts:
+  #   - family: Poppins
+  #     fonts:
+  #       - asset: assets/fonts/Poppins-Regular.ttf
+  #       - asset: assets/fonts/Poppins-Bold.ttf
+  #         weight: 700
+  #       - asset: assets/fonts/Poppins-SemiBold.ttf
+  #         weight: 600
